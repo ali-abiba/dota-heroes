@@ -3,7 +3,10 @@ html, body {
   height: 100%;
 }
 body {
-  background-color: #f5f5f5;
+  background-image: url("https://wall.alphacoders.com/by_sub_category.php?id=194163&name=DotA+2+Wallpapers");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
   font-family: 'Open Sans', sans-serif;
 }
 
