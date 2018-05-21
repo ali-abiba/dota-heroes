@@ -3,25 +3,9 @@ html, body {
   height: 100%;
 }
 body {
-  background-image: url("https://wall.alphacoders.com/by_sub_category.php?id=194163&name=DotA+2+Wallpapers");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
+  background-color: #f5f5f5;
   font-family: 'Open Sans', sans-serif;
 }
-@media(max-width: 640px) {
-  body {
-    background-attachment: initial;
-    background-size: auto auto;
-  }
-}
-
-/*@media (max-width:640px) {*/
-  /*.app-home {*/
-    /*background-size: 100% auto;*/
-  /*}*/
-/*}*/
-
 section {
   padding: 100px 0;
 }
