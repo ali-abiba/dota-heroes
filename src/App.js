@@ -6,7 +6,9 @@ import HeroPopularity from "./heroes/hero.popularity/hero.popularity";
 
 
 var styles = {
-    background: `url(${Background}) no-repeat center center fixed`,
+    background: `url(${Background}) no-repeat center center`,
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed'
 };
 
 class App extends Component {
