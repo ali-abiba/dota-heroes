@@ -7,7 +7,7 @@ import HeroPopularity from "./heroes/hero.popularity/hero.popularity";
 class App extends Component {
   render() {
     return (
-        <div style={styles} class="app-home">
+        <div class="app-home">
             <HomeComponent></HomeComponent>
             <HeroPopularity></HeroPopularity>
         </div>
