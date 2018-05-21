@@ -8,7 +8,7 @@ import HeroPopularity from "./heroes/hero.popularity/hero.popularity";
 var styles = {
     background: `url(${Background}) no-repeat center center`,
     backgroundSize: 'cover',
-    backgroundAttachment: 'fixed',
+    backgroundAttachment: 'initial',
     backgroundSize: '100% 100%'
 };
 
