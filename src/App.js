@@ -9,7 +9,7 @@ var styles = {
     background: `url(${Background}) no-repeat center center`,
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
-    backgroundSize: 'auto 100%'
+    backgroundSize: '100% 100%'
 };
 
 class App extends Component {
