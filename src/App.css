@@ -9,6 +9,12 @@ body {
   background-position: center center;
   font-family: 'Open Sans', sans-serif;
 }
+@media(max-width: 640px) {
+  body {
+    background-attachment: initial;
+    background-size: auto auto;
+  }
+}
 
 /*@media (max-width:640px) {*/
   /*.app-home {*/
