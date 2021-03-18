@@ -1,69 +1,72 @@
 import React, {Component} from 'react';
 import './hero.popularity.css';
 import HeroPopularityTable from "./hero.popularity.table";
+
 const dotenv = require('dotenv');
 const axios = require('axios');
 
 dotenv.config();
 
 export default class HeroPopularity extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {heroStats:''};
+        this.state = {heroStats: ''};
         this.getHeroStats = this.getHeroStats.bind(this);
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getHeroStats();
     }
 
-    render(){
-        if(!this.state.heroStats){
+    render() {
+        if (!this.state.heroStats) {
             return null
         }
-            return (
-                <div className="hero-popularity">
-                    <div className="bg-light container-fluid">
-                        <h1 className="display-2">Most Contested Heroes</h1>
-                        <hr />
-                        <div className="top-hero center">
+        return (
+            <div className="hero-popularity">
+                <div className="most-contested container-fluid">
+                    <h1 className="display-2">Most Contested Heroes</h1>
+                    <hr/>
+                    <div className="top-hero center">
+                        <div className="row">
+                            <img src={this.state.heroStats[0].imageUrl} className="img-fluid top-hero-image"
+                                 alt={this.state.heroStats[0].name}/>
+                        </div>
+                        <div className="row">
+                            <h1 className="center">{this.state.heroStats[0].name}</h1>
+                        </div>
+                        <div className="row">
+                            <h3 className="center"> Picked: {this.state.heroStats[0].proPick} |
+                                Banned {this.state.heroStats[0].proBan}</h3>
+                        </div>
+                    </div>
+                    <div className="secondary-hero row">
+                        <div className="secondary-card">
+                            <img src={this.state.heroStats[1].imageUrl} className="img-fluid lower-hero-image"
+                                 alt={this.state.heroStats[1].name}/>
                             <div className="row">
-                                <img src={this.state.heroStats[0].imageUrl} className="img-fluid top-hero-image" alt={this.state.heroStats[0].name}/>
+                                <h4>Picked: {this.state.heroStats[1].proPick} |
+                                    Banned {this.state.heroStats[1].proBan}</h4>
                             </div>
+                        </div>
+                        <div className="secondary-card">
+                            <img src={this.state.heroStats[2].imageUrl} className="img-fluid lower-hero-image"
+                                 alt={this.state.heroStats[2].name}/>
                             <div className="row">
-                                <h1 className="center">{this.state.heroStats[0].name}</h1>
-                            </div>
-                            <div className="row">
-                                <h3 className="center"> Picked: {this.state.heroStats[0].proPick} | Banned {this.state.heroStats[0].proBan}</h3>
-                            </div>
-                            <div className="row">
-                                <div className="col-md">
-                                    <div className="row">
-                                        <img src={this.state.heroStats[1].imageUrl} className="img-fluid lower-hero-image" alt={this.state.heroStats[1].name}/>
-                                    </div>
-                                    <div className="row">
-                                        <h4>Picked: {this.state.heroStats[1].proPick} | Banned {this.state.heroStats[1].proBan}</h4>
-                                    </div>
-                                </div>
-                                <div className="col-md">
-                                    <div className="row">
-                                        <img src={this.state.heroStats[2].imageUrl} className="img-fluid lower-hero-image" alt={this.state.heroStats[2].name}/>
-                                    </div>
-                                    <div className="row">
-                                        <h4>Picked: {this.state.heroStats[2].proPick} | Banned {this.state.heroStats[2].proBan}</h4>
-                                    </div>
-                                </div>
+                                <h4>Picked: {this.state.heroStats[2].proPick} |
+                                    Banned {this.state.heroStats[2].proBan}</h4>
                             </div>
                         </div>
                     </div>
-                    <div className="hero-popularity-table">
-                        <HeroPopularityTable heroStats={this.state.heroStats}></HeroPopularityTable>
-                    </div>
                 </div>
-            );
+                <div className="hero-popularity-table">
+                    <HeroPopularityTable heroStats={this.state.heroStats}></HeroPopularityTable>
+                </div>
+            </div>
+        );
     }
 
-     getHeroStats() {
+    getHeroStats() {
         //Get heroStats data
         axios.get('https://api.opendota.com/api/heroStats', {
             params: {
@@ -92,11 +95,11 @@ export default class HeroPopularity extends Component {
         this.iconUrl = iconUrl;
     }
 
-    compare(a,b) {
-        if((a.proPick + a.proBan) < (b.proPick + b.proBan)){
+    compare(a, b) {
+        if ((a.proPick + a.proBan) < (b.proPick + b.proBan)) {
             return 1;
         }
-        if((a.proPick + a.proBan) > (b.proPick + b.proBan)){
+        if ((a.proPick + a.proBan) > (b.proPick + b.proBan)) {
             return -1;
         }
         return 0;

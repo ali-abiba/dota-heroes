@@ -54,9 +54,6 @@ export default class HeroPopularityTable extends Component {
                   <div className="paginator row mx-auto">
                       {this.getButtons()}
                   </div>
-                  <div className="row mx-auto">
-                      <p>(double click buttons to change the page)</p>
-                  </div>
               </div>
           </div>
         );
@@ -77,7 +74,7 @@ export default class HeroPopularityTable extends Component {
 
         let start = (this.state.pagerPage * this.state.pageSize);
         let end = start + (this.state.pageSize -1);
-        this.state.pageData = this.state.pagerData.slice(start,end);
+        this.setState({pageData: this.state.pagerData.slice(start,end)});
     }
     getButtons(){
         let buttonNodes = [];

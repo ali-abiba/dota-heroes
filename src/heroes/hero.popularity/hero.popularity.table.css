@@ -1,4 +1,12 @@
 .card {
-    margin-top:10%;
-    margin-bottom:10%;
+    margin-top:10vh;
+    margin-bottom:10vh;
+}
+
+.hero-table {
+    padding-bottom: 10vh;
+}
+
+.paginator {
+    margin-bottom : 3vh;
 }
