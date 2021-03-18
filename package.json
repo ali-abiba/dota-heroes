@@ -2,6 +2,9 @@
   "name": "dota-heroes",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.14.1"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^5.0.1",
